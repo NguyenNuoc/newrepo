@@ -1,0 +1,41 @@
+
+
+localhost:5000
+
+
+	<!--
+		[ngClass]="{'is-invalid': class.invalid }"   	
+	-->
+	
+	
+	
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Name:</b>
+
+	  
+
+	  <input formControlName="name"    
+             id="name"
+             type="text"
+             class="form-control" 
+		
+		  
+			[ngClass]="{'is-invalid': createForm.get('name').hasError('required') }"
+		
+			 [class.valid]="createForm.get('name').valid"
+			 
+			 		 [class.invalid]="createForm.get('name').invalid"
+	
+			 />
+			 
+    			 
+<div   class="invalid-feedback"   *ngIf="createForm.get('name').invalid"     class="form-group   alert-danger"      >
+           	 
+	<strong class="text-danger"
+		*ngIf="createForm.get('name').hasError('required')">
+        du maa fylle inn navn her 
+    </strong>
+
+</div>	
+
+</li>
+

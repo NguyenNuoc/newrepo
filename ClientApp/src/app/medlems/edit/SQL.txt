@@ -1,0 +1,70 @@
+
+
+
+
+
+CREATE TABLE dbo.Medlem		
+(
+Medlem_Id  UNIQUEIDENTIFIER  NOT NULL PRIMARY KEY  default  NEWID(),
+Fornavn VARCHAR(255)  NOT NULL,
+Etternavn VARCHAR(255) NOT NULL,
+Bosted VARCHAR(255)  NULL,
+MobilTlf  INT  NOT NULL,
+Email  VARCHAR(255)   NOT NULL,
+Fodselsdato   DATE   NOT NULL.
+Kontingent_Id INT NOT NULL
+);
+
+
+CREATE TABLE dbo.Kontingent
+(
+Id  UNIQUEIDENTIFIER  NOT NULL  PRIMARY KEY  default  NEWID(),
+Status     VARCHAR(255)   NOT NULL,
+Fk_Kontingent_Id   INT  NOT NULL FOREIGN KEY REFERENCES Medlem(Kontingent_Id),
+);
+
+
+
+INSERT INTO Book VALUES (1, 'Let is Snow', 'ISBN3030303');
+INSERT INTO Book VALUES (2, 'Three Cups of Tea','ISBN638242');
+GO
+
+INSERT INTO dbo.Author VALUES(100,'John Green','30303',1);
+INSERT INTO dbo.Author VALUES(101,'Maureen Johnson','4343',1);
+
+
+
+
+
+
+
+one to many 
+
+
+CREATE TABLE dbo.Book
+(
+Pk_Book_Id INT PRIMARY KEY,
+Name VARCHAR(255),
+ISBN VARCHAR(255)
+);
+
+CREATE TABLE dbo.Author
+(
+Pk_Author_Id INT PRIMARY KEY,
+FullName     VARCHAR(255),
+MobileNo     CHAR(10),
+Fk_Book_Id   INT FOREIGN KEY REFERENCES Book(Pk_Book_Id)
+);
+
+INSERT INTO Book VALUES (1, 'Let is Snow', 'ISBN3030303');
+INSERT INTO Book VALUES (2, 'Three Cups of Tea','ISBN638242');
+GO
+
+INSERT INTO dbo.Author VALUES(100,'John Green','30303',1);
+INSERT INTO dbo.Author VALUES(101,'Maureen Johnson','4343',1);
+INSERT INTO dbo.Author VALUES(102,'Lauren Myracle','76665',1);
+INSERT INTO dbo.Author VALUES(103,'Greg Mortenson','6434',2);
+INSERT INTO dbo.Author VALUES(104,'David Oliver Relin','72322',2);
+GO
+
+SELECT * FROM dbo.Book;

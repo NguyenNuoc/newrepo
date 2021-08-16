@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<div class="container"  style="width: 65%;"  >
+
+<div class="row"> 
+      <div class="col">
+      <h4>Redigerer medlem info</h4>
+    </div>
+	
+    <div class="col text-right"   >
+    </div>
+</div>
+
+	  <!-- Write your comments here -->
+   
+</div>
+
+
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)" >
+    <input formControlName="id"
+           id="id"
+           type="hidden" />
+
+<div class="container"   style="width: 65%;">
+      
+<div class="row" style ="border-color: #FFDEAD;background-color: #FF0000; ">
+
+  <div class="col"  >
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Fornavn:</b> 
+	  <input formControlName="shirtNo"
+               id="shirtNo"
+               type="text"
+               class="form-control" />
+       </li>
+</div>
+
+
+  <div class="col"  >      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>mobil tlf:</b> 
+	  <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+       </li>
+</div>
+
+  <div class="w-100"></div>
+
+  <div class="col">	
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Etternavn:</b> 
+	  <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+       </li>
+</div>
+
+
+  <div class="col">     
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>email:</b>
+	  <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li>
+</div>
+
+
+</div>
+
+</div>
+
+    
+
+<div class="container"  style="width: 65%;"  >
+
+<div class="row"     style ="border-color: #FFDEAD;background-color: #FF0000; ">
+  <div class="col">      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>fodseldato (dd-mm-yyyy):</b> <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li>
+</div>
+  <div class="col">    <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>kontingent:</b>
+  
+
+	        <select formControlName="positionId"
+              id="positionId"
+              class="form-control">
+        <option value="">- Select -</option>
+        <option *ngFor="let position of positions" [ngValue]="position.id">
+          {{position.name}}
+        </option>
+      </select>
+
+  
+  
+
+</li></div>
+
+  
+  <div class="w-100"></div>
+
+  <div class="col">   <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>bosted:</b> 
+  
+
+  
+  <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li></div>
+ 
+  <div class="col"></div>
+     
+</div>
+
+</div>
+
+
+<div class="container"   style="width: 65%;">
+
+<!-- Write your comments here -->
+
+<!--
+<div class="row"   style ="background-color: #50c878; ">
+<div class="container"   style="width: 65%;">
+
+-->
+ 
+ <div>
+   <li class="list-group-item"  style ="border-color: #50c878;background-color: #50c878 ">   
+	<button class="btn btn-primary btn-sm" type="submit" [disabled]="!editForm.valid">Oppdatere</button>&nbsp;
+    <a href="#" [routerLink]="['/players/', player.id, 'details']" class="btn btn-secondary btn-sm">Forrige side</a>&nbsp;
+   <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Medlemsliste</a>
+   </li>
+   
+   </div>
+   </div>
+	   </form> 
+    <a href="#" [routerLink]="['/players/', player.id, 'details']" class="btn btn-secondary btn-sm">Forrige side</a>&nbsp;
+   <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Medlemsliste</a>
+	  	     
+	 
+</html>       

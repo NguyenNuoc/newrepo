@@ -1,0 +1,86 @@
+<div class="container"  style="width: 70%;"    >
+
+<div class="row">
+  
+      <div class="col">
+      <h4>Update Player</h4>
+    </div>
+	
+    <div class="col text-right"   >
+      
+    </div>
+	
+      </div>
+
+
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)" >
+
+    <input formControlName="id"
+           id="id"
+           type="hidden" />
+
+    <div style ="background-color: green; "   class="form-group"   >
+
+   <ul   id ="group"  class="list-group list-group-flush"    style ="background-color: green; "  >
+      
+	  <li class="list-group-item"    style ="background-color: green; "><b>Shirt No:</b>   <input formControlName="shirtNo"
+             id="shirtNo"
+             type="text"
+             class="form-control" />
+	</li>
+	
+      <li class="list-group-item"><b>Position:</b> <input formControlName="name"
+             id="name"
+             type="text"
+             class="form-control" /></li>
+			 
+      <li class="list-group-item"><b>Appearances:</b> <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+</li>
+
+ 
+
+      <li class="list-group-item"><b>Goals:</b> <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li>
+
+
+      <li class="list-group-item"><b>Goals per match:</b>  <input formControlName="goalsPerMatch"
+               id="goalsPerMatch"
+               type="text"
+               class="form-control" /> </li>
+ 
+  </ul>
+ </div>
+
+ 
+   <li class="list-group-item">
+	  
+	<table >
+
+<tr>
+  <td>
+	<button class="btn btn-primary btn-sm" type="submit" [disabled]="!editForm.valid">Update</button>
+  </td>
+  
+    <td>
+    <a href="#" [routerLink]="['/players/', player.id, 'details']" class="btn btn-secondary btn-sm">back to View</a>&nbsp;
+     </td>
+   
+   <td>
+   <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>
+	</td>
+	
+	</tr>
+
+    </table >
+   </li>
+	
+  </form>
+
+</div>

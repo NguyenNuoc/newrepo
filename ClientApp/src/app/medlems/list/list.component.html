@@ -1,0 +1,139 @@
+         
+<!DOCTYPE html>
+<html lang="en">  
+   
+<body>
+  
+   
+     
+<div class="container"  style="width: 75%;">
+
+
+<form class="form-horizontal"       [formGroup]="createForm" (ngSubmit)="onSubmit(createForm)" >
+ 
+<table class=""   id="de"  >
+  <colgroup>
+       <col  style="width: 35%;">
+	   <col style="width: 18%;">
+	   <col style="width: 28%;">
+       <col  style="width: 2%;">
+</colgroup>    
+  
+   
+  <tr>
+	<th >      <h3>Medlem list    </h3></th>
+	<th ><b>Soker etter Navn:</b></th>
+	<th >    
+	
+	 
+	    	 <input      formControlName="mnavn"   maxlength="18"               
+             	  id="mnavn"           
+                  type="text"
+                  class="form-control"      onkeypress="return  /^[a-zA-Z\s]*$/i.test(event.key)"         
+				  
+				  
+				                	[ngClass]="{'is-invalid': createForm.get('mnavn').hasError('required') }"
+
+				[class.valid]="createForm.get('mnavn').valid"
+			 
+			 		 [class.invalid]="createForm.get('mnavn').invalid"
+
+				    
+				  /></th>  
+	
+     <th>    <input    id="sok"   type="image"  (click)=getMedlemnavn()    [disabled]="!createForm.valid"    
+		         
+				       name="submit"   src="assets/s.png"     style="width:26px;height:19px;"   />
+				 
+								 
+				 </th> 
+				 
+    </tr>
+
+	</table>
+	   	   </form>  
+	
+	
+	<div class="row">
+      </div>	
+ 
+  <table class="table table-bordered table-sm"   id="demo">
+  
+     <colgroup>
+       <col span="1" style="width: 4%;">
+       <col span="1" style="width: 25%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 25%;">
+       <col span="1" style="width: 12%;">
+	   </colgroup>
+  
+    <tr>
+	<th >Se</th>
+	
+		
+     <th>Medlem navn</th>
+      <th>Mobil tlf</th>
+        <th>Email</th>
+
+      <th>Kontingent</th>
+    </tr>
+
+    <tr *ngFor="let medlem of medlems  | paginate:{itemsPerPage: 8, currentPage:p}">					
+	
+	      <td class="text-center">
+		  <a   href="#" [routerLink]="['/medlems/', medlem.medlem_Id, 'read']" > 
+              <img   src="assets/m.png"   style="width:26px;height:28px;">
+         </a>
+		</td>   
+
+		
+      <td>{{ medlem.fornavn }} {{ medlem.etternavn }}</td>
+      <td>{{ medlem.mobilTlf }} </td>
+      <td>{{ medlem.email }}</td>  
+
+	  <td   [ngStyle]="{'color':medlem.kontingent?.name === 'IKKE Betalt' ? 'red' : 'blue' }">{{ medlem.kontingent?.name }}</td>
+      
+     
+	<!--
+       <td> <a href="#" [routerLink]="['/medlems/', medlem.medlem_Id, 'edit']" class="btn btn-primary btn-sm">Edit</a>
+	   
+	           <button type="button" (click)="deleteMedlem(medlem.medlem_Id)" class="btn btn-danger btn-sm">Delete</button>&nbsp;
+	   </td>&nbsp;
+	   
+     *ngIf="!forecasts"    
+	 
+	 
+	 style ="color: white;background-color: green;">Sok 
+	 
+	 style ="color: white;background-color: green;"
+	   pattern="^[a-zA-Z]+$"
+	   --> 
+	     
+	   
+	  <!-- Write your comments here -->
+     
+    </tr>
+	  </table>
+ 
+	  <div id="pagination">
+			<pagination-controls (pageChange)="p=$event"></pagination-controls>
+		</div> 
+      
+							
+	  <!-- Write your comments here -->
+ <div class="container"  style="width: 95%;"> 
+		<div class="row">
+   			
+     		<div class="col   text-right"   id="re-List">
+			 
+				<button  id="mList"  type="button" (click)="getList()"   class="btn btn-secondary btn-sm">Medlemsliste</button>
+	         
+			 <a href="#" routerLink="/medlems/create/" class="btn btn-primary btn-sm">Registrer ny medlem</a>
+			 </div>
+			
+	   </div>		
+		</div>
+	 	
+</div>
+</body>
+</html> 

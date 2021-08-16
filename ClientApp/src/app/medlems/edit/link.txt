@@ -1,0 +1,15 @@
+
+
+
+4e2224eb-f759-46a9-a7ac-1c300153ca69
+
+https://www.joshuacolvin.net/angular-subscribe-to-route-params-and-data/
+
+https://codecraft.tv/courses/angular/routing/parameterised-routes/
+
+
+https://sodocumentation.net/angular-ui-router/topic/2031/custom-parameter-types
+
+
+url: "/{id:(?:[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12})}",
+Read more abou

@@ -1,0 +1,65 @@
+
+
+
+
+
+
+   
+<!DOCTYPE html>
+<html lang="en">
+
+
+<h1>Hello</h1>
+
+<head>
+<meta charset="UTF-8">   
+<style>
+body {
+  color: olive;
+}
+
+h1 {
+  color: olive;        
+}
+</style>
+
+</head>
+
+<body>
+
+Velkommen til min demo side, her vil du se en demo av en applikasjon laget av meg, 
+       Det er brukt ASPNet Core og Angular og Sql server og Entity framework.
+
+
+<ul>
+  <li>ASP.NET Core og C# for cross-platform server-side code</li>
+  <li>Angular og TypeScript for client-side code</li>
+  <li>Bootstrap for layout and styling</li>
+   <li>Sql Server og Entityframework</li>
+</ul>
+
+Du kan starte ved aa velge meny Medlem overst til hoyre, du vil komme til
+    
+<ul>
+  <li><strong>Hoved side </strong>, du vil se en list av alle medlem, med deres navn, 
+  medlem-id, og andre info om medlem. </li>
+  
+  <li>  <a   href=""  >   
+  <img   src="assets/m.png"   style="width:30px;height:30px;">    
+  </a>
+, Du kan klikke paa denne icon for aa se mer info om en bestemt medlem, du vil   
+komme videre til en ny side hvor du kan enten oppdatere opplysninger om denne
+medlem eller sletter denne medlem fra database. </li>
+<li>Det er mulig aa kjore folgende operasjon ved database</li>
+<li>Legge til en ny medlem til database</li>
+<li>Oppdaterer opplysninger om en medlem som allerede er registrert i database</li>
+<li>Sletter en medlem som er i database</li>  
+<br/>
+God fornoyelse, Med vennlig hilsen
+<br/>
+utvikler Nguyen
+
+</ul>
+
+</body>
+

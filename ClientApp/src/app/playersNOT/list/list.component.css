@@ -1,0 +1,71 @@
+
+
+#demo {
+  font-family: Arial, Helvetica, sans-serif;
+
+  border-collapse: collapse;
+
+
+
+  width: 100%;
+}
+
+#demo td {
+  border: 1px solid #ddd;
+  
+    text-align: center;
+
+	
+	color: olive;
+	
+	/*
+	font-size: 18px;
+*/
+	
+	}
+
+#demo tr:nth-child(even){background-color: #f2f2f2;}
+
+#demo tr:hover {background-color: #ddd;}
+
+#demo th {
+border: 1px solid #ddd;
+  
+
+  text-align: center;
+  
+  
+  /* This is a single-line comment */
+/*
+ background-color: #808000;
+  background-color: #008000;
+style="width:100px"  
+*/
+
+background-color: #0000A0;
+  
+  color: yellow;
+  /*
+  font-size: 18px;
+*/
+  }
+
+      
+  
+#re a {
+
+	
+	background-color: #F3E5AB;
+		 color: olive;
+ 
+}  
+
+
+#h3 {
+  
+	 color: olive;
+	/*
+	font-size: 18px;
+*/  
+	
+	}

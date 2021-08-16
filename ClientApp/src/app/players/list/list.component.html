@@ -1,0 +1,61 @@
+         
+<!DOCTYPE html>
+<html lang="en">
+  
+<body>
+
+<div class="container"  style="width: 85%;">
+
+  <div class="row">
+    <div class="col"   id="h3">
+      <h3>Medlem list    </h3>
+    </div>
+    <div class="col text-right"   id="regis-button">
+      <a href="#" routerLink="/players/create/" class="btn btn-primary btn-sm">Registrer ny medlem</a>
+    </div>
+  </div>
+
+  <table class="table table-bordered table-sm"   id="demo">
+  
+     <colgroup>
+       <col span="1" style="width: 4%;">
+       <col span="1" style="width: 25%;">
+       <col span="1" style="width: 19%;">
+       <col span="1" style="width: 19%;">
+       <col span="1" style="width: 12%;">
+	   </colgroup>
+  
+    <tr>
+	<th >Se</th>
+     <th>Medlem navn</th>
+      <th>email</th>
+      <th>mobil tlf</th>
+      <th>kontingent</th>
+    </tr>
+
+    <tr *ngFor="let player of players  | paginate:{itemsPerPage: 8, currentPage:p}">					
+	
+	      <td class="text-center">
+		  <a   href="#" [routerLink]="['/players/', player.id, 'details']" > 
+              <img   src="assets/m.png"   style="width:26px;height:28px;">
+         </a>
+		</td>   
+
+		
+	<td>{{ player.id }}</td>
+      <td>{{ player.shirtNo }}</td>
+      <td>{{ player.name }} {{ player.id }}</td>
+      <td>{{ player.appearances }}</td>
+      
+	  <!-- Write your comments here -->
+     
+    </tr>
+	  </table>
+
+	  <div id="pagination">
+			<pagination-controls (pageChange)="p=$event"></pagination-controls>
+		</div> 
+
+</div>
+</body>
+</html>

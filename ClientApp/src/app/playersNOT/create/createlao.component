@@ -1,0 +1,112 @@
+
+<div class="container"  style="width: 70%;"    >
+
+<div class="row">
+  
+      <div class="col">
+      <h4>Registrer ny medlem</h4>
+    </div>
+	
+    <div class="col text-right"   >
+      <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>
+    </div>
+	   
+</div>
+
+  
+
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm)" >
+
+
+		   
+    <div >
+
+   <ul   id ="group"  class="list-group list-group-flush"     >
+      
+	  <li class="list-group-item"    style ="border-color: #FFDEAD; background-color: #FFdead; "><b>Shirt No:</b>   <input formControlName="shirtNo"
+             id="shirtNo"
+             type="text"
+             class="form-control" />
+	</li>
+
+
+	
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+	  
+
+	  <b>name:</b> 
+ 
+	  <input formControlName="name"
+             id="name"
+             type="text"
+             class="form-control"  required ="required"   [(ngModel)]="name"/>
+ 
+	
+			 </li>
+
+			   <div class="form-group">
+            <label>Name:</label>
+              
+        </div>
+        <div *ngIf="createForm.controls['name'].invalid && (createForm.controls['name'].dirty || createForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="createForm.controls['name'].errors.required">
+              Name is required.
+            </div>
+        </div>
+		
+			 
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Appearances:</b> <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+</li>
+
+ 
+
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Goals:</b> <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li>
+
+
+      <li class="list-group-item"  style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Goals per match:</b>  <input formControlName="goalsPerMatch"
+               id="goalsPerMatch"
+               type="text"
+               class="form-control" /> </li>
+ 
+  </ul>
+ </div>
+
+ 
+ 	
+ 
+   <li class="list-group-item"  style ="border-color: #FFDEAD;background-color: #50c878 ">   
+	  
+	<table >
+
+<tr>
+  <td>
+	<button class="btn btn-primary btn-sm" type="submit"  
+	
+	
+	  <!-- Write your comments here
+
+	[disabled]="!createForm.valid"
+	-->
+	
+	
+       > Registrer</button>
+  
+  </td>
+	
+	</tr>
+
+    </table >
+   </li>
+	
+  </form>    
+  
+  
+ 
+</div>

@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html>
+
+
+<div class="container"  style="width: 65%;"  >
+
+
+ 
+<div class="row"> 
+      <div class="col"  >
+      <h4>Registrer ny medlem info</h4>
+    </div>
+	
+    <div class="col text-right"   >
+    <a href="#" routerLink="/medlems/list" class="btn btn-secondary btn-sm">Medlemsliste</a>
+	</div>
+</div>
+
+	  <!-- </div>
+	        		
+		[ngClass]="{'is-invalid': createForm.get('Fornavn').hasError('required') }"
+      		
+	  Write your comments here -->
+      
+</div>
+
+
+
+
+<form class="form-horizontal"       [formGroup]="createForm" (ngSubmit)="onSubmit(createForm)" >
+    
+		  <!--
+	  <li class="list-group-item"    style ="border-color: #FFDEAD; background-color: #FFDEAD; "><b>Shirt No:</b> 
+	  <input formControlName="shirtNo"
+             id="shirtNo"
+             type="text"
+             class="form-control" />
+	</li>
+        -->
+	
+	  
+
+<div class="container"   style="width: 65%;">
+
+<div class="row" style ="border-color: #FFDEAD;background-color: teal; ">
+
+  <div class="col"   >
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Fornavn:</b> 
+	
+	<input     formControlName="fornavn"   
+               id="fornavn"        maxlength="18"       onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)"
+               type="text"
+               class="form-control" 
+			   
+              	[ngClass]="{'is-invalid': createForm.get('fornavn').hasError('required') }"
+
+				[class.valid]="createForm.get('fornavn').valid"
+			 
+			 		 [class.invalid]="createForm.get('fornavn').invalid"
+
+					 
+			   />
+
+			   
+    		<!--	 
+<div      *ngIf="createForm.get('Fornavn').invalid"     class="invalid-feedback"   class="form-group   alert-danger">
+           	 
+	<strong class="text-danger"
+		*ngIf="createForm.get('Fornavn').hasError('required')">
+        * maa fylle inn  
+    </strong>
+
+</div>	
+
+ -->
+ 
+ 
+			   </li>
+</div>
+
+
+
+
+<!-- </div>    [ngClass]="{'is-invalid': createForm.get('mobiltlf').hasError('required') }"Write your comments here -->
+    
+
+  <div class="col"  >      
+    
+  <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>Mobil tlf:</b> 
+  
+	  <input formControlName="mobilTlf"
+               id="mobilTlf"
+               type="number"
+               	   
+        [ngClass]="{'is-invalid': createForm.get('mobilTlf').hasError('required') }"
+		
+			 [class.valid]="createForm.get('mobilTlf').valid"
+			 
+			 		 [class.invalid]="createForm.get('mobilTlf').invalid"
+
+					 class="form-control" />
+<!--
+        <div   class="invalid-feedback"   *ngIf="createForm.get('mobiltlf').invalid"     class="form-group   alert-danger"      >
+           	 
+	<strong class="text-danger"
+		*ngIf="createForm.get('mobiltlf').hasError('required')">
+        * 
+    </strong>
+    
+</div>
+-->						 
+       </li>
+</div>
+
+
+<!--                 			
+        [ngClass]="{'is-invalid': createForm.get('Etternavn').hasError('required') }"
+		Write your comments here -->
+    
+  <div class="w-100"></div>
+
+  <div class="col"   >      
+  <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>Etternavn:</b> 
+  
+	  <input formControlName="etternavn"
+               id="etternavn"        maxlength="18"       onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)"
+               type="text"
+             
+			 [ngClass]="{'is-invalid': createForm.get('etternavn').hasError('required') }"
+			 [class.valid]="createForm.get('etternavn').valid"
+			 
+			 		 [class.invalid]="createForm.get('etternavn').invalid"
+
+					 
+					 class="form-control" />
+
+
+
+    		<!--					 
+        <div   class="invalid-feedback"   *ngIf="createForm.get('Etternavn').invalid"     class="form-group   alert-danger"      >
+           	 
+	<strong class="text-danger"
+		*ngIf="createForm.get('Etternavn').hasError('required')">
+        * 
+    </strong>
+    
+       </div>						 
+-->
+
+       </li>
+</div>
+
+
+
+<!-- </div>Write your comments here -->
+    
+
+  
+  <div class="col"   >     
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Bosted:</b> 
+	  
+	  <input formControlName="bosted"
+               id="bosted"         maxlength="18"       onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)"
+               type="text"
+               class="form-control" />
+</li>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- </div>Write your comments here -->
+    
+
+<div class="container"  style="width: 65%;"  >
+
+<div class="row"     style ="border-color: #FFDEAD;background-color: teal; ">
+  
+
+  <div class="col"   >
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>fodselsdato:(dd-mm-yyyy)</b> 
+	
+	
+	<input     formControlName="fodselsdato"
+               id="fodselsdato"
+               type="date"
+               class="form-control" 
+			   
+			   			[ngClass]="{'is-invalid': createForm.get('fodselsdato').hasError('required') }"
+		
+			 [class.valid]="createForm.get('fodselsdato').valid"
+			 
+			 		 [class.invalid]="createForm.get('fodselsdato').invalid"
+
+			   />
+
+ <!--   			 
+<div   class="invalid-feedback"   *ngIf="createForm.get('fodselsdato').invalid"     class="form-group   alert-danger"      >
+           	 
+	<strong class="text-danger"
+		*ngIf="createForm.get('fodselsdato').hasError('required')">
+        * 
+    </strong>
+
+</div>	
+
+-->
+
+			   </li>
+</div>
+
+
+  <div class="col"   > 
+
+  <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+
+  <b>Kontingent:</b>
+
+          
+	        <select formControlName="currentKontintId"
+       
+              id="currentKontintId"
+              class="form-control"
+
+			  [ngClass]="{'is-invalid': createForm.get('currentKontintId').hasError('required') }"
+		
+			 [class.valid]="createForm.get('currentKontintId').valid"
+			 
+			 		 [class.invalid]="createForm.get('currentKontintId').invalid"    >   
+			  		             
+			           
+		   
+        <option *ngFor="let ko of kontingents" [ngValue]="ko.kontintId">
+          {{ ko.name }}
+        </option>	
+        
+		             
+             </select>
+
+      
+  <!--
+    			 
+<div   class="invalid-feedback"   *ngIf="createForm.get('kontingent').invalid"     class="form-group   alert-danger"      >
+           	 
+	<strong class="text-danger"
+		*ngIf="createForm.get('kontingent').hasError('required')">
+        * 
+    </strong>
+
+</div>	
+		  
+		</select>
+  -->
+  
+
+</li></div>
+
+  
+  <div class="w-100"></div>
+
+    
+ <!--
+  <div class="col">     
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>bosted:</b> 
+	  
+	  <input formControlName="bosted"
+               id="bosted"
+               type="text"
+               class="form-control" />
+</li>
+</div>
+-->
+
+
+
+<div class="col"  > 
+
+     <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+
+	 <b>Email:</b> 
+  
+	  <input formControlName="email"
+               id="email"
+               type="email"   email="true"
+               			   
+        [ngClass]="{'is-invalid': createForm.get('email').hasError('required') }"
+		
+			 [class.valid]="createForm.get('email').valid"
+			 
+			 		 [class.invalid]="createForm.get('email').invalid"
+					   
+					 class="form-control" />
+				 
+        <div>
+		<strong class="text-danger"
+		  *ngIf="email.errors?.email">
+         * Not valid email   
+    </strong>   
+</div>
+ 
+ 
+						 
+       </li>
+</div>
+  
+
+ 
+ 
+  <div class="col"></div>
+     
+</div>
+
+</div>
+
+
+<div class="container"   style="width: 65%;">
+
+<!-- Write your comments here -->
+
+<!--
+<div class="row"   style ="background-color: #50c878; ">
+<div class="container"   style="width: 65%;">
+   
+-->
+ 
+ <div>
+   <li class="list-group-item"  style ="border-color: #50c878;background-color: #50c878 ">   
+
+   <button class="btn btn-primary btn-sm" type="submit" [disabled]="!createForm.valid">Registrer</button>&nbsp;
+
+   </li>
+   
+   </div>
+   </div>
+	   </form> 
+	  	     
+
+	 
+       

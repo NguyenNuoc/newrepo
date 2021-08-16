@@ -1,0 +1,41 @@
+<div  id ="top"  class="container"  style="width: 60%; height: 70%;">
+  
+  <br />
+  <div   id ="detail-card-header" class="card">
+    <div   class="card-header">
+      <div class="row">
+
+	  <div class="col">
+          <h4> Medlem info</h4> 
+        </div>
+        <div     class="col text-right" >
+          
+        </div>
+      </div>
+                     
+	  </div>
+    <ul   id ="group"  class="list-group list-group-flush">
+      <li class="list-group-item"><b>Fornavn:</b> {{ player.id }}</li>
+      <li class="list-group-item"><b>Etternavn:</b> {{ player.shirtNo }}</li>
+      <li class="list-group-item"><b>email:</b> {{ player.position?.name }}</li>
+      <li class="list-group-item"><b>mobil nr:</b> {{ player.appearances }}</li>
+      <li class="list-group-item"><b>bosted:</b> {{ player.goals }}</li>
+	  <li class="list-group-item"><b>fodselsdato (dd-mm-yyyy):</b> {{ player.goals }}</li>
+      <li class="list-group-item"><b>kontingent:</b> {{ player.goalsPerMatch }}</li>
+    </ul>
+  </div>
+  
+  
+  <div>
+  <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #50c878 ">
+  <a   href="#" [routerLink]="['/players/', player.id, 'edit']" class="btn btn-primary btn-sm">Redigere</a>&nbsp;
+        <button type="button" (click)="deletePlayer(player.id)" class="btn btn-danger btn-sm">Slett denne</button>&nbsp;
+		
+	  <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Medlemsliste</a>	
+</li>
+	</div>
+	
+		</div>
+		
+		
+   

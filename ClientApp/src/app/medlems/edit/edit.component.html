@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<div class="container"  style="width: 65%;"  >
+
+<div class="row"> 
+      <div class="col">
+      <h4>Redigerer medlem info</h4>
+    </div>
+	
+    <div class="col text-right"   >
+    </div>
+</div>
+
+	  <!-- Write your comments here -->
+   
+</div>
+ 
+     
+	 
+	 
+ 
+<form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)" >
+
+    <!--
+	<input formControlName="medlemId"
+           id="medlemId"
+           type="text"  />
+	 
+	 <br/>
+
+ <br/>
+
+ 
+	<input formControlName="medlem_Id"
+           id="medlem_Id"
+           type="text"  />
+	 
+-->
+
+	 
+        	  <!--   type="hidden" />  -->
+			  
+ 
+<div class="container"   style="width: 65%;">
+      
+<div class="row" style ="border-color: #FFDEAD;background-color: blue; ">
+
+  <div class="col"  >
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Fornavn:</b> 
+	  <input formControlName="fornavn"
+               id="fornavn"        maxlength="18"     onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)"
+               type="text"
+               class="form-control" 
+			   
+			   			                	[ngClass]="{'is-invalid': editForm.get('fornavn').hasError('required') }"
+
+				[class.valid]="editForm.get('fornavn').valid"
+			 
+			 		 [class.invalid]="editForm.get('fornavn').invalid"
+
+			   
+			   />
+       </li>
+</div>
+
+
+  <div class="col"  >      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>mobil tlf:</b> 
+	  <input formControlName="mobilTlf"
+               id="mobilTlf"
+               type="number"
+               class="form-control"
+
+                [ngClass]="{'is-invalid': editForm.get('mobilTlf').hasError('required') }"
+
+				[class.valid]="editForm.get('mobilTlf').valid"
+			 
+			 		 [class.invalid]="editForm.get('mobilTlf').invalid"
+
+
+			   />
+       </li>
+</div>
+
+  <div class="w-100"></div>
+
+  <div class="col">	
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Etternavn:</b> 
+	  <input formControlName="etternavn"
+               id="etternavn"      maxlength="18"     onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)"
+               type="text"
+               class="form-control" 
+			   
+			   
+			   [ngClass]="{'is-invalid': editForm.get('etternavn').hasError('required') }"
+
+				[class.valid]="editForm.get('etternavn').valid"
+			 
+			 		 [class.invalid]="editForm.get('etternavn').invalid"
+
+			   
+			   
+			   
+			   />
+       </li>
+</div>
+
+
+  <div class="col">     
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>email:</b>
+	  <input formControlName="email"
+               id="email"     email="true"
+               type="email"
+               class="form-control" 
+			   
+			   
+			   [ngClass]="{'is-invalid': editForm.get('email').hasError('required') }"
+
+				[class.valid]="editForm.get('email').valid"
+			 
+			 		 [class.invalid]="editForm.get('email').invalid"
+			   
+			   />
+			   
+
+
+  	
+</li>
+</div>
+
+
+</div>
+
+</div>
+
+    
+
+<div class="container"  style="width: 65%;"  >
+
+<div class="row"     style ="border-color: #FFDEAD;background-color: blue; ">
+  <div class="col">      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>fodseldato (dd-mm-yyyy):</b> 
+  
+  <input formControlName="fodselsdato"  
+               id="fodselsdato"
+               type="text"
+               class="form-control" 
+			   
+			   
+               [ngClass]="{'is-invalid': editForm.get('fodselsdato').hasError('required') }"
+
+				[class.valid]="editForm.get('fodselsdato').valid"
+			 
+			 		 [class.invalid]="editForm.get('fodselsdato').invalid"
+
+			   
+			   
+			   />
+</li>
+</div>
+
+
+
+
+  <div class="col">      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>bosted:</b> 
+  
+  
+  
+  <input formControlName="bosted"    
+               id="bosted"         maxlength="18"     onkeypress="return /^[a-zA-Z\s]*$/i.test(event.key)"
+               type="text"    
+               class="form-control" 
+			   
+			   
+			   
+			   />
+			   
+			   
+</li>
+</div>
+
+        	  <!--   type="hidden" />  
+
+  <div class="col">    <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>kontingent:</b>
+  
+
+	        <select formControlName="positionId"
+              id="positionId"
+              class="form-control">
+        <option value="">- Select -</option>
+        <option *ngFor="let position of positions" [ngValue]="position.id">
+          {{position.name}}
+        </option>
+      </select>
+
+</li></div>
+ -->
+    
+  <div class="w-100"></div>
+
+  <div class="col">   <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; ">
+  <b>kontingent:</b> 
+  
+
+          	  <!--
+  <input formControlName="currentKontintId"
+               id="currentKontintId"    type ="hidden"
+               type="number"
+               class="form-control" /> {{ medlem.kontingent?.name }}
+            -->
+			
+			
+   
+	        <select formControlName="currentKontintId"        
+       
+              id="currentKontintId"
+              class="form-control"   
+
+
+              
+			   [ngClass]="{'is-invalid': editForm.get('currentKontintId').hasError('required') }"
+
+				[class.valid]="editForm.get('currentKontintId').valid"
+			 
+			 		 [class.invalid]="editForm.get('currentKontintId').invalid"
+  
+		
+			  >
+
+			  
+			  <!--
+			  [ngClass]="{'is-invalid': createForm.get('currentKontintId').hasError('required') }"
+		
+			 [class.valid]="createForm.get('currentKontintId').valid"
+			 
+			 		 [class.invalid]="createForm.get('currentKontintId').invalid"    >   
+
+              -->
+
+
+			  <!--
+					 
+ <option value=""> - select -</option>
+               -->
+			   
+ 
+        <option *ngFor="let ko of kontingents" [ngValue]="ko.kontintId">
+          {{ ko.name }}
+        </option>		             
+             </select>
+			 
+	  		   
+			   
+			   
+			   </li>
+</div>
+ 
+  <div class="col"></div>
+     
+</div>
+
+</div>
+
+
+<div class="container"   style="width: 65%;">
+ 
+<!-- Write your comments here -->
+
+<!--
+<div class="row"   style ="background-color: #50c878; ">
+<div class="container"   style="width: 65%;">
+
+-->
+  
+ <div>
+   <li class="list-group-item"  style ="border-color: #50c878;background-color: #50c878 ">   
+	<button class="btn btn-primary btn-sm" type="submit" [disabled]="!editForm.valid">Oppdatere</button>&nbsp;
+    
+	 
+   <a href="#" routerLink="/medlems/list" class="btn btn-secondary btn-sm">Medlemsliste</a>
+   </li>
+   
+   </div>
+   
+   </div>
+	   </form> 
+     	     
+	   
+</html>       

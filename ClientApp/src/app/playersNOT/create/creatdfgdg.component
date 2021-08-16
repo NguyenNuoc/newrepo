@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+	<body >
+	
+	<div id="demo" class="container"   style="width: 70%;background-color: #FFff00;">
+
+  <div class="col"  style = "border-color: #FFDEAD; background-color: #FFDEAD; "> 
+    <div class="row"> 
+      	
+	<table >
+
+<tr>
+  <td>
+      <h4>Create Player</h4>
+  </td>
+    
+   <td>
+   <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm"  ><b>Back To Players List</b></a>
+	</td>
+	
+	</tr>
+
+    </table>
+	</div>
+
+    </div>
+  
+     	
+			   
+<form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm)" >
+     
+ <div   class="col"    style ="border-color: #FFDEAD; background-color: #FFDEAD; ">	 
+	 
+   <ul   id ="group"  class="list-group list-group-flush display:table;"   >
+      
+	  <li class="list-group-item"    style ="border-color: #FFDEAD; background-color: #FFDEAD; "><b>Shirt No:</b>   <input formControlName="shirtNo"
+             id="shirtNo"
+             type="text"
+             class="form-control" />
+	</li>
+	
+      <li class="list-group-item"   ><b>name</b> 
+	  <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+
+	  </li>
+			 
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Appearances:</b>
+	  <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+</li>
+
+ 
+
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Goals:</b> <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li>
+
+      <li class="list-group-item"  style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Goals per match:</b>  <input formControlName="goalsPerMatch"
+               id="goalsPerMatch"
+               type="text"
+               class="form-control" /> </li>
+ 
+  </ul>
+ 
+
+ 
+
+	    
+   <li class="list-group-item"  style ="border-color: #FFDEAD;background-color: #50c878 ">   
+	  
+	<table >
+
+<tr>
+  <td>
+	<button class="btn btn-primary btn-sm" type="submit" [disabled]="!editForm.valid">Legg til nye</button>
+  </td>
+  
+   
+   <td>
+   <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm"  ><b>Back To Players List</b></a>
+	</td>
+	
+	</tr>
+
+    </table >
+   </li>
+	    
+  <br />
+
+</div>
+  
+  </form>
+    
+	  <br />
+   
+</div>  
+
+</body >

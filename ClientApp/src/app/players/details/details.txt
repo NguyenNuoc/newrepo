@@ -1,0 +1,16 @@
+
+#detail-card-header  div  {
+  color: olive;
+  background-color: #FFA500;
+ }
+
+ 
+ #group {
+color : olive  ;
+  }
+ 
+
+ #Txt {
+color : olive  ;
+  }
+ 

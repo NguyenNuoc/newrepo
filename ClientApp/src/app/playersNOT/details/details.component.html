@@ -1,0 +1,40 @@
+<div  id ="top"  class="container"  style="width: 70%; height: 70%;">
+  <br />
+  <h3  id ="Txt"  >Player Details</h3>
+  <br />
+  <div   id ="detail-card-header" class="card">
+    <div   class="card-header">
+      <div class="row">
+
+	  <div class="col">
+          <h4>{{ player.name }}</h4> 
+        </div>
+        <div     class="col text-right" >
+          
+        </div>
+      </div>
+      
+	  </div>
+    <ul   id ="group"  class="list-group list-group-flush">
+      <li class="list-group-item"><b>Id:</b> {{ player.id }}</li>
+      <li class="list-group-item"><b>Shirt No:</b> {{ player.shirtNo }}</li>
+      <li class="list-group-item"><b>Position:</b> {{ player.position?.name }}</li>
+      <li class="list-group-item"><b>Appearances:</b> {{ player.appearances }}</li>
+      <li class="list-group-item"><b>Goals:</b> {{ player.goals }}</li>
+      <li class="list-group-item"><b>Goals per match:</b> {{ player.goalsPerMatch }}</li>
+    </ul>
+  </div>
+  
+  
+  <div>
+  <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #50c878 ">
+  <a   href="#" [routerLink]="['/players/', player.id, 'edit']" class="btn btn-primary btn-sm">Redigere</a>&nbsp;
+        <button type="button" (click)="deletePlayer(player.id)" class="btn btn-danger btn-sm">Slett denne</button>&nbsp;
+		
+	  <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>	
+</li>
+	</div>
+	
+		</div>
+		
+		

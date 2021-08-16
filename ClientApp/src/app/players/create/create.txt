@@ -1,0 +1,88 @@
+<div class="container"   style="width: 65%;">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Create Player</h3>
+    </div>
+    <div class="col text-right">
+	
+	 <button class="btn btn-primary" type="submit" [disabled]="!createForm.valid"   >Create</button>
+	
+      <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>
+    </div>
+  </div>
+  <br />
+
+
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm)">
+   
+
+  
+<div >
+
+   <ul   id ="group"  class="list-group list-group-flush"     >
+      
+	  <li class="list-group-item"    style ="border-color: #FFDEAD; background-color: #FFDEAD; "><b>Shirt No:</b>   <input formControlName="shirtNo"
+             id="shirtNo"
+             type="text"
+             class="form-control" />
+	</li>
+	
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Name:</b> <input formControlName="name"
+             id="name"
+             type="text"
+             class="form-control" /></li>
+			 
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Appearances:</b> <input formControlName="appearances"
+               id="appearances"
+               type="text"
+               class="form-control" />
+</li>
+
+ 
+
+      <li class="list-group-item"   style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Goals:</b> <input formControlName="goals"
+               id="goals"
+               type="text"
+               class="form-control" />
+</li>
+
+      <li class="list-group-item"  style ="border-color: #FFDEAD;background-color: #FFDEAD; "><b>Goals per match:</b>  <input formControlName="goalsPerMatch"
+               id="goalsPerMatch"
+               type="text"
+               class="form-control" /> </li>
+ 
+  </ul>
+ </div>
+
+
+
+ 
+   <li class="list-group-item"  style ="border-color: #FFDEAD;background-color: #50c878 ">   
+	  
+	<table >
+
+<tr>
+
+  <td>
+    <button class="btn btn-primary" type="submit" [disabled]="!createForm.valid"   >Create</button>
+
+  </td>
+   
+   <td>
+   <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm"  >Back To Players List</a>
+	</td>
+	
+	</tr>
+
+    </table >
+   </li>
+	
+ 
+  </form>
+
+  	<div style="height: 150px;">
+		</div >
+	
+   
+</div>

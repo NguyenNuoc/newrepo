@@ -1,0 +1,79 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+
+
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col"   id="h3">
+      <h3>Players    </h3>
+    </div>
+    <div class="col text-right">
+      <a href="#" routerLink="/players/create/" class="btn btn-primary btn-sm">Legg til nye</a>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-sm"   id="demo">
+  
+     <colgroup>
+       <col span="1" style="width: 2%;">
+       <col span="1" style="width: 3%;">
+       <col span="1" style="width: 12%;">
+       <col span="1" style="width: 12%;">
+       <col span="1" style="width: 2%;">
+       <col span="1" style="width: 2%;">
+
+       <col span="1" style="width: 10%;">
+       <col span="1" style="width: 5%;">
+
+	   </colgroup>
+  
+    <tr>
+	<th></th>
+      <th>Medlem Id</th>
+      <th>Fornavn</th>
+      <th>Etternavn</th>
+      <th>Alder</th>
+      <th>Kjonn</th>
+      <th>Tittel</th>
+      <th>Goals per match</th>
+      
+    </tr>
+
+    <tr *ngFor="let player of players  | paginate:{itemsPerPage: 8, currentPage:p}">					
+
+	
+	      <td class="text-center"   >
+        <a href="#" [routerLink]="['/players/', player.id, 'details']" class="btn btn-info btn-sm">apne</a>&nbsp;	
+	  </td>
+
+	<td>{{ player.id }}</td>
+      <td>{{ player.shirtNo }}</td>
+      <td>{{ player.name }}</td>
+      <td>{{ player.position?.name }}</td>
+      <td>{{ player.appearances }}</td>
+      <td>{{ player.goals }}</td>
+      <td>{{ player.goalsPerMatch }}</td>
+
+
+	  <!-- Write your comments here -->
+      
+	  
+	
+	  
+    </tr>
+	
+
+	  </table>
+
+	  <div id="pagination">
+			<pagination-controls (pageChange)="p=$event"></pagination-controls>
+		</div> 
+
+</div>
+</body>
+</html>
